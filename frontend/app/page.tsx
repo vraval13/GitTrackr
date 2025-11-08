@@ -123,9 +123,9 @@ export default function Home() {
                 <GithubIcon className="w-8 h-8 text-indigo-500 group-hover:text-indigo-600 transition-colors" />
                 <div className="absolute -inset-1 bg-indigo-500/20 rounded-full blur group-hover:bg-indigo-500/30 transition-all" />
               </div>
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-700 tracking-tight">
-                GitHub Resume Analyzer
-              </h1>
+              <a href="/"><h1 className="text-xl sm:text-2xl font-bold text-slate-700 tracking-tight">
+                GitTrackr
+              </h1></a>
             </div>
 
             {/* Desktop Navigation */}
@@ -317,7 +317,7 @@ export default function Home() {
         <section id="features" className="mb-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Choose Us?
+              Why Choose GitTrackr?
             </h3>
             <p className="text-gray-600">
               Everything you need to showcase your GitHub profile professionally

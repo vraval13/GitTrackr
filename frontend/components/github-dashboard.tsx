@@ -180,7 +180,7 @@ export function GitHubDashboard({ data, onBack }: GitHubDashboardProps) {
             <GitHubIcon className="w-8 h-8 text-indigo-500" />
             <a href="/">
               <h1 className="text-xl font-bold text-slate-800">
-                GitHub Resume Analyzer
+                GitTrackr
               </h1>
             </a>
           </div>
