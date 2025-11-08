@@ -600,24 +600,6 @@ curl http://localhost:5000/api/health
 
 4. **Deploy**: Click "Create Web Service"
 
-### Alternative: Heroku
-
-```bash
-# Install Heroku CLI
-curl https://cli-assets.heroku.com/install.sh | sh
-
-# Login and create app
-heroku login
-heroku create gittrackr-api
-
-# Set environment variables
-heroku config:set GITHUB_API_TOKEN=your_token_here
-
-# Deploy
-cd backend
-git subtree push --prefix backend heroku main
-```
-
 ### Security Considerations
 
 - ✅ Use HTTPS in production
@@ -798,35 +780,6 @@ Replace placeholder images in `/public/screenshots/`:
 
 ---
 
-## License & Acknowledgements
-
-### License
-
-This project is licensed under the **MIT License**.
-
-```
-MIT License
-
-Copyright (c) 2024 GitTrackr Contributors
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 ### Acknowledgements
 
@@ -844,34 +797,6 @@ This project is built with amazing open-source technologies:
 - **[GitHub API](https://docs.github.com/en/rest)** - REST and GraphQL APIs
 
 Special thanks to the open-source community for making this project possible!
-
----
-
-## Roadmap
-
-### Upcoming Features
-
-- [ ] **Response Caching**: Redis integration for GitHub API responses
-- [ ] **HTML to PDF**: Headless Chromium snapshots via Puppeteer
-- [ ] **Improved Language Caching**: Persistent storage for language stats
-- [ ] **Avatar Embedding**: Base64 embed avatars in PDFs for offline viewing
-- [ ] **Batch Processing**: Analyze multiple resumes simultaneously
-- [ ] **Custom Themes**: User-selectable color schemes
-- [ ] **Export Formats**: JSON, CSV, HTML export options
-- [ ] **Authentication**: User accounts and saved analyses
-- [ ] **Analytics Dashboard**: Track popular profiles and trends
-- [ ] **Mobile App**: React Native mobile version
-- [ ✅ **PDF Export**: Comprehensive profile summaries
-- [ ✅ **Contribution Stats**: Current and longest streaks
-- [ ✅ **Language Distribution**: Percentage breakdown
-
-### Planned Improvements
-
-- **Performance**: Lazy loading for large repository lists
-- **UI/UX**: Dark mode toggle and accessibility enhancements
-- **Testing**: Unit tests (Jest) and E2E tests (Playwright)
-- **Documentation**: Video tutorials and interactive demos
-- **Internationalization**: Multi-language support (i18n)
 
 ---
 
