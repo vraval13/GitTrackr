@@ -3,7 +3,6 @@
 import { FileUpload } from "@/components/file-upload";
 import { ResumeInput } from "@/components/resume-input";
 import { useState, useEffect } from "react";
-import {Analytics} from '@vercel/analytics/react';
 import {
   GithubIcon,
   Sparkles,
