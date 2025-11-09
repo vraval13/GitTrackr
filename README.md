@@ -47,30 +47,43 @@
 ## Screenshots
 
 ### Homepage / Upload UI
-![Homepage](/public/screenshots/homepage.png)
+<img width="2920" height="1676" alt="image" src="https://github.com/user-attachments/assets/a074dbe8-2b88-4fe8-881f-812b6c2fc2b9" />
 *Landing page with resume upload options: drag & drop, file upload, or paste text directly*
 
 ### Upload & Analysis Flow
-![Upload Process](/public/screenshots/upload.png)
+#### PDF Upload :
+<img width="1454" height="1468" alt="image" src="https://github.com/user-attachments/assets/5bd40de2-6332-48b9-aae4-a4ee4b6e7df0" />
+
+#### Text Input : 
+<img width="1454" height="1552" alt="image" src="https://github.com/user-attachments/assets/0157628f-5c4f-4760-8084-6649ea9ada60" />
+
+#### Real - time Loading GitHub Data :
+<img width="1454" height="1552" alt="image" src="https://github.com/user-attachments/assets/cf320f48-9155-4325-919d-1a8d3df68a28" />
+
 *Real-time progress indicator while extracting GitHub username from resume*
 
 ### Dashboard - Profile & Stats
-![Dashboard Profile](/public/screenshots/dashboard-profile.png)
+<img width="2924" height="1674" alt="image" src="https://github.com/user-attachments/assets/8f4405cc-399d-4b49-b787-56f5a67625b1" />
 *User profile section with avatar, bio, and key statistics (repos, followers, following)*
 
 ### Dashboard - Repositories Grid
-![Repositories Grid](/public/screenshots/dashboard-repos.png)
+<img width="2924" height="1674" alt="image" src="https://github.com/user-attachments/assets/04ba4f54-2cae-4f25-a7e2-542a8c528ed0" />
 *Equal-height repository cards with search, language filter, and sort options*
 
 ### Dashboard - Metrics & Contributions
-![Contribution Metrics](/public/screenshots/dashboard-metrics.png)
+<img width="2924" height="1498" alt="image" src="https://github.com/user-attachments/assets/5563ae0d-d0cb-4156-b546-192417421a9e" />
 *Contribution activity heatmap with current streak, longest streak, and language distribution chart*
 
 ### Exported PDF Summary
-![PDF Export](/public/screenshots/exported-summary.png)
-*Professional PDF report with profile, statistics, contributions, languages, and detailed repository information*
+<img width="2924" height="956" alt="image" src="https://github.com/user-attachments/assets/1f2f86d9-a604-4b05-b0d4-d539fae730a9" />
 
-> **Note**: Replace placeholder images in `/public/screenshots/` with actual screenshots of your application.
+<img width="1368" height="1724" alt="image" src="https://github.com/user-attachments/assets/aa287d50-4385-4996-a964-7aef97dc90c4" />
+
+<img width="2728" height="1724" alt="image" src="https://github.com/user-attachments/assets/adf5fbd8-d648-4227-8ccb-ac48689792b9" />
+
+<img width="2728" height="1724" alt="image" src="https://github.com/user-attachments/assets/49d8db66-5ea8-4d17-b71c-5d83e7111fdf" />
+
+*Professional PDF report with profile, statistics, contributions, languages, and detailed repository information*
 
 ---
 
