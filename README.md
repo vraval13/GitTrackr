@@ -24,7 +24,6 @@
 - [Deployment](#deployment)
 - [Troubleshooting & FAQ](#troubleshooting--faq)
 - [Contributing](#contributing)
-- [License & Acknowledgements](#license--acknowledgements)
 - [Roadmap](#roadmap)
 
 ---
@@ -776,14 +775,6 @@ We welcome contributions! Here's how to get involved:
   flake8 backend/
   ```
 
-### Adding Screenshots
-
-Replace placeholder images in `/public/screenshots/`:
-1. Take high-quality screenshots (1920x1080 recommended)
-2. Save as PNG with descriptive names
-3. Update image paths in README.md
-4. Commit and push changes
-
 ### Updating Documentation
 
 - Update `README.md` for user-facing changes
@@ -810,18 +801,6 @@ This project is built with amazing open-source technologies:
 - **[GitHub API](https://docs.github.com/en/rest)** - REST and GraphQL APIs
 
 Special thanks to the open-source community for making this project possible!
-
----
-
-## Support
-
-If you found this project helpful, consider:
-
-- ⭐ **Starring** the repository
-- 🐛 **Reporting bugs** via [GitHub Issues](https://github.com/yourusername/gittrackr/issues)
-- 💡 **Suggesting features** in discussions
-- 🤝 **Contributing** code or documentation
-- 📢 **Sharing** with your network
 
 ---
 
