@@ -72,7 +72,7 @@ const ALL_LANGUAGES = "All Languages";
 async function downloadGithubSummary(username: string) {
   try {
     const apiBaseUrl =
-      process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      process.env.NEXT_PUBLIC_API_URL || "https://gittrackrr.onrender.com";
     const exportUrl = `${apiBaseUrl}/api/github/${encodeURIComponent(
       username
     )}/export`;
