@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://gittrackrr.onrender.com"
 
 export async function uploadResume(formData: FormData) {
   const response = await fetch(`${API_BASE_URL}/api/upload`, {
