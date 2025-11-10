@@ -17,11 +17,8 @@
 - [Frontend Notes](#frontend-notes)
 - [Backend Implementation](#backend-implementation)
 - [Project Structure](#project-structure)
-- [Testing](#testing)
 - [Deployment](#deployment)
-- [Troubleshooting & FAQ](#troubleshooting--faq)
 - [Contributing](#contributing)
-- [Roadmap](#roadmap)
 
 ---
 
