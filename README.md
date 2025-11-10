@@ -358,32 +358,6 @@ curl http://localhost:5000/api/github/octocat/export \
 - Color-coded statistics
 - Responsive layout
 
-### Customization
-
-**Colors**: Edit `github-dashboard.tsx` and Tailwind config:
-```typescript
-// Gradient backgrounds
-className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"
-
-// Statistics colors
-<p className="text-indigo-600">...</p>  // Total contributions
-<p className="text-green-600">...</p>   // Current streak
-<p className="text-purple-600">...</p>  // Longest streak
-```
-
-**Card Layout**: Modify grid columns in `github-dashboard.tsx`:
-```typescript
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-```
-
-**PDF Styling**: Edit `generate_pdf_summary()` in `backend/app.py`:
-```python
-# Custom colors
-colors.HexColor('#4f46e5')  # Indigo
-colors.HexColor('#10b981')  # Green
-colors.HexColor('#8b5cf6')  # Purple
-```
-
 ---
 
 ## Backend Implementation
@@ -436,29 +410,6 @@ def fetch_github_contributions(username: str) -> Dict:
 - Longest streak (best consecutive day count)
 
 **Requires**: `GITHUB_API_TOKEN` with `read:user` scope
-
-### Language Aggregation
-
-Fetches language bytes for each repository via REST API:
-
-```python
-def aggregate_language_distribution(username: str, repositories: List[Dict]) -> List[Dict]:
-    # For each repo: GET /repos/:owner/:repo/languages
-    # Returns: {"JavaScript": 12345, "Python": 67890, ...}
-    # Aggregates total bytes per language
-    # Converts to percentages
-```
-
-**Fallback**: If rate-limited, uses repository's primary `language` field as single-language count.
-
-### Error Handling
-
-- **File Size Limit**: 10MB max (configurable via `MAX_CONTENT_LENGTH`)
-- **File Type Validation**: Checks file extensions and MIME types
-- **Username Validation**: Verifies GitHub user exists before fetching data
-- **API Errors**: Graceful degradation with informative error messages
-- **PDF Generation**: Try/catch blocks with detailed logging
-
 ---
 
 ## Project Structure
@@ -553,107 +504,9 @@ gittrackr/
 
 ---
 
-## Troubleshooting & FAQ
-
-### Common Issues
-
-#### 1. **Invalid GitHub Username After Restart**
-
-**Problem**: API returns 404 or "GitHub user not found"
-
-**Cause**: Missing or invalid `GITHUB_API_TOKEN`
-
-**Solution**:
-```bash
-# Check token is set
-echo $GITHUB_API_TOKEN
-
-# Regenerate token at https://github.com/settings/tokens
-# Ensure scopes: public_repo, read:user
-
-# Update .env
-GITHUB_API_TOKEN=ghp_new_token_here
-
-# Restart server
-python app.py
-```
-
-#### 2. **Contribution Stats Showing Zero**
-
-**Problem**: `contribution_activity` returns `{total: 0, current_streak: 0, longest_streak: 0}`
-
-**Cause**: GraphQL query requires authenticated token
-
-**Solution**:
-- Add `GITHUB_API_TOKEN` to backend `.env`
-- Ensure token has `read:user` scope
-- Verify token is active: `curl -H "Authorization: token $GITHUB_API_TOKEN" https://api.github.com/user`
-
-#### 3. **Incomplete Language Distribution**
-
-**Problem**: Only 1-2 languages shown instead of full breakdown
-
-**Cause**: Rate limit on per-repo language API calls
-
-**Solution**:
-- Add GitHub token to increase rate limit (60 → 5000/hour)
-- Backend falls back to primary language field when rate-limited
-- Wait an hour for rate limit reset
-
-#### 4. **CORS Errors in Browser**
-
-**Problem**: `Access to fetch blocked by CORS policy`
-
-**Solution**:
-```python
-# In backend/app.py, ensure:
-CORS(app, resources={r"/api/*": {"origins": "*"}})
-
-# For production, specify exact origin:
-CORS(app, resources={r"/api/*": {"origins": "https://yourdomain.com"}})
-```
-
-#### 5. **PDF Generation Fails**
-
-**Problem**: "Failed to generate PDF summary"
-
-**Cause**: Missing ReportLab or network error fetching avatar
-
-**Solution**:
-```bash
-# Reinstall ReportLab
-pip install --upgrade reportlab
-
-# Test avatar URL is accessible
-curl -I https://avatars.githubusercontent.com/u/583231
-
-# Check logs
-tail -f backend/app.log
-```
-
-### Enable Debug Logging
-
-```bash
-# Set Flask debug mode
-export FLASK_ENV=development
-export FLASK_DEBUG=1
-python app.py
-
-# Or in app.py:
-app.run(debug=True, host='0.0.0.0', port=5000)
-```
-
-### Log Locations
-
-- **Backend**: Console output (use `logger.info()`, `logger.error()`)
-- **Frontend**: Browser console (F12 → Console tab)
-- **API Requests**: Network tab in browser DevTools
-
----
-
 ## Contributing
 
-We welcome contributions! Here's how to get involved:
+I welcome you for your contributions! Here's how to get involved:
 
 ### How to Contribute
 
@@ -715,29 +568,11 @@ We welcome contributions! Here's how to get involved:
 ---
 
 
-### Acknowledgements
-
-This project is built with amazing open-source technologies:
-
-- **[Next.js](https://nextjs.org/)** - React framework for production
-- **[React](https://reactjs.org/)** - JavaScript library for building user interfaces
-- **[TypeScript](https://www.typescriptlang.org/)** - Typed JavaScript
-- **[Flask](https://flask.palletsprojects.com/)** - Lightweight Python web framework
-- **[ReportLab](https://www.reportlab.com/)** - PDF generation library
-- **[PyPDF2](https://pypdf2.readthedocs.io/)** - PDF manipulation library
-- **[python-docx](https://python-docx.readthedocs.io/)** - DOCX file handling
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[Lucide React](https://lucide.dev/)** - Beautiful icon library
-- **[GitHub API](https://docs.github.com/en/rest)** - REST and GraphQL APIs
-
-Special thanks to the open-source community for making this project possible!
-
----
-
 ## Contact
 
-- **GitHub**: [@yourusername](https://github.com/vraval13)
+- **GitHub**: [@vraval13](https://github.com/vraval13)
 - **Email**: ravalvyom17@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/vyom-raval/
 
 ---
 
