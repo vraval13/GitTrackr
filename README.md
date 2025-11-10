@@ -2,10 +2,7 @@
 
 > Extract GitHub profiles from resumes and generate interactive dashboards with repo, contribution, and language stats — includes PDF export.
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/yourusername/gittrackr)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Issues](https://img.shields.io/github/issues/yourusername/gittrackr)](https://github.com/yourusername/gittrackr/issues)
-[![Demo](https://img.shields.io/badge/demo-live-success)](https://gittrackr.vercel.app)
+[![Demo](https://img.shields.io/badge/demo-live-success)](https://gittrackr-sand.vercel.app/)
 
 ---
 
@@ -155,14 +152,6 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 ```env
 GITHUB_API_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
-
-- **GITHUB_API_TOKEN**: GitHub Personal Access Token (required for GraphQL contributions and higher rate limits)
-  - **Without token**: 60 requests/hour
-  - **With token**: 5,000 requests/hour
-  - **Minimum scopes**: `public_repo`, `read:user`
-  - **Generate token**: [GitHub Settings → Tokens](https://github.com/settings/tokens)
-
-⚠️ **Security Warning**: Never commit `.env` or `.env.local` files to version control!
 
 ---
 
@@ -512,56 +501,6 @@ gittrackr/
 
 ---
 
-## Testing
-
-### Manual Testing
-
-1. **Upload Test Files**:
-   ```bash
-   # Test PDF upload
-   curl -X POST http://localhost:5000/api/upload \
-     -F "file=@sample_resume.pdf"
-   
-   # Test text analysis
-   curl -X POST http://localhost:5000/api/analyze \
-     -H "Content-Type: application/json" \
-     -d '{"text": "GitHub: github.com/octocat"}'
-   ```
-
-2. **Test Profile Fetching**:
-   ```bash
-   # Fetch profile data
-   curl http://localhost:5000/api/github/octocat | jq
-   
-   # Download PDF
-   curl http://localhost:5000/api/github/octocat/export \
-     --output test_profile.pdf
-   ```
-
-3. **Test Rate Limit Fallback**:
-   ```bash
-   # Unset token to simulate rate limit
-   unset GITHUB_API_TOKEN
-   python app.py
-   
-   # Expected: Contribution stats return zeros, language distribution uses fallback
-   ```
-
-### Sample Resume Files
-
-Place test resumes in `backend/uploads/` for manual testing:
-
-- **PDF**: Resume with clickable GitHub links
-- **DOCX**: Resume with hyperlinked text
-- **TXT**: Plain text with `github.com/username` URL
-
-### Health Check
-
-```bash
-curl http://localhost:5000/api/health
-# Expected: {"status": "ok"}
-```
-
 ---
 
 ## Deployment
@@ -611,15 +550,6 @@ curl http://localhost:5000/api/health
    ```
 
 4. **Deploy**: Click "Create Web Service"
-
-### Security Considerations
-
-- ✅ Use HTTPS in production
-- ✅ Configure CORS with specific origins (not `*`)
-- ✅ Never commit `.env` files
-- ✅ Rotate GitHub tokens regularly
-- ✅ Enable rate limiting middleware
-- ✅ Use environment-specific configs
 
 ---
 
